@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Database connection
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/app-tienda-online';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/app-tienda-online';
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
