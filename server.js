@@ -12,7 +12,8 @@ app.use(express.json());
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/app_tienda_online';
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true // Added option for better compatibility
 }).then(() => console.log('Conectado a MongoDB'))
   .catch(err => console.error('Error de conexión: ', err));
 
