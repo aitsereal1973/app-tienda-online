@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Conexión a la base de datos
+// Database connection
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/app-tienda-online';
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
@@ -16,7 +16,7 @@ mongoose.connect(mongoURI, {
 }).then(() => console.log('Conectado a MongoDB'))
   .catch(err => console.error('Error de conexión: ', err));
 
-// Rutas básicas
+// Basic routes
 app.get('/', (req, res) => {
   res.send('API de App Tienda Online');
 });
